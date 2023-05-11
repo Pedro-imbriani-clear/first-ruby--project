@@ -1,5 +1,7 @@
 <h1>Seja Bem-Vindo </h1>
-<p> <strong>Data:</strong> <%= data_br(Date.today)%></p>
+<p>O idioma usado nessa aplicaçao é: <strong><%= t('actual_locale')%></strong></p>
+<p> <strong>Data:</strong> <%= I18n.l(Date.today)%></p>
+<p> <%= I18n.t("hello")%> </p>
 <%= render "menu" %>
 <p>
 Voce esta em ambiente de <strong> <%= ambiente_rails %> </strong> 

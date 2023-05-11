@@ -21,7 +21,7 @@
       mining_type:
         id: Codigo
         description: Descriçao
-        acronym: Sigua
+        acronym: Sigla
         updated_at: Ultima atualizaçao
         created_at: Criado em
 

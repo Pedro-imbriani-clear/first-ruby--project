@@ -13,4 +13,5 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+<% msg = Time.now.hour < 12 ? "Bom dia" : "Boa tarde"%>
+alert('<%= msg%>')

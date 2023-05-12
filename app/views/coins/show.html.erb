@@ -1,19 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Descriotions:</strong>
-  <%= @coin.descriotions %>
-</p>
+<form>
+  <div class="form-group">
+    <%= label_tag nil, @coin.class.human_attribute_name(:descriotions) %>
+    <%= text_field_tag nil, @coin.descriotions,class:"form-control" ,disabled:true%>
+  </div>
+  
+  <div class="form-group">
+    <%= label_tag nil,  @coin.class.human_attribute_name(:acronym) %>
+    <%= text_field_tag nil ,@coin.acronym,class:"form-control"  ,disabled:true%>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag nil , @coin.class.human_attribute_name(:url_image) %>
+    <%= text_field_tag nil, @coin.url_image,class:"form-control",disabled:true  %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag nil, @coin.class.human_attribute_name(:mining_type) %>
+    <%= text_field_tag nil, @coin.mining_type.description,class:"form-control" ,disabled:true %>
+  </div>
+</form>
 
 <p>
-  <strong>Acronym:</strong>
-  <%= @coin.acronym %>
-</p>
-
-<p>
-  <strong>Url image:</strong>
+  <strong><%= t('showing.image')%></strong>
 <%= image_tag @coin.url_image, size:"25x25" %> 
 </p>
 
-<%= link_to 'Edit', edit_coin_path(@coin) %> |
-<%= link_to 'Back', coins_path %>
+<%= link_to t('links.edit'), edit_coin_path(@coin), class:"btn btn-primary" %> 
+<%= link_to t('links.back'), coins_path,class:"btn btn-primary"  %>
